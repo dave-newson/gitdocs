@@ -78,7 +78,10 @@ module.exports = (props, compiler) => {
   })
 
   const server = http.createServer(app)
-  attachSocket(server)
+  
+  if (live_reload) {
+    attachSocket(server)
+  }
 
   return new Promise((resolve, reject) => {
     const bindHost = bind || host;

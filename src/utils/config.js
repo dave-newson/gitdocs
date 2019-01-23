@@ -27,6 +27,7 @@ const DEFAULT_CONFIG = {
   host: 'localhost',
   bind: null,
   port: 8000,
+  live_reload: true,
   languages: ['bash', 'json'],
   header_links: [],
   theme: 'default',

@@ -90,7 +90,7 @@ class App extends Component {
                 component404={NotFound}
                 pageData={{
                   sticky: this.state.sticky,
-                  socketUrl: `ws://${config.host}:${config.port}`,
+                  socketUrl: config.live_reload ? `ws://${config.host}:${config.port}` : null,
                 }}
               />
             </WrapperPage>

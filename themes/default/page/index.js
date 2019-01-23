@@ -42,7 +42,7 @@ export default class Page extends Component {
   async componentDidMount () {
     const { socketUrl } = this.props.pageData
 
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NODE_ENV === 'development' && socketUrl) {
       this._socket = new WebSocket(socketUrl)
 
       this._socket.addEventListener('open', evt => {
