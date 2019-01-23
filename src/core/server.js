@@ -10,11 +10,13 @@ const attachSocket = require('./socket')
 
 module.exports = (props, compiler) => {
   const {
+    bind,
     host,
     port,
     temp,
+    live_reload,
   } = props.config
-
+  
   const app = connect()
   const url = `http://${host}:${port}`
   const staticDir = `${temp}/${namespaces.static}`
@@ -79,7 +81,8 @@ module.exports = (props, compiler) => {
   attachSocket(server)
 
   return new Promise((resolve, reject) => {
-    server.listen(port, host, err => {
+    const bindHost = bind || host;
+    server.listen(port, bindhost, err => {
       if (err) {
         return reject(err)
       }

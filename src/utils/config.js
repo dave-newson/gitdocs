@@ -25,6 +25,7 @@ const DEFAULT_CONFIG = {
   domain: '',
   crawlable: true,
   host: 'localhost',
+  bind: null,
   port: 8000,
   languages: ['bash', 'json'],
   header_links: [],
