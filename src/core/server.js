@@ -85,7 +85,7 @@ module.exports = (props, compiler) => {
 
   return new Promise((resolve, reject) => {
     const bindHost = bind || host;
-    server.listen(port, bindhost, err => {
+    server.listen(port, bindHost, err => {
       if (err) {
         return reject(err)
       }
